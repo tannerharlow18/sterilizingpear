@@ -62,6 +62,14 @@ const App: React.FC = () => {
     <div className={`min-h-screen p-4 md:p-8 flex flex-col items-center transition-colors duration-300 ${isDark ? 'bg-slate-950 text-slate-100' : 'bg-slate-50 text-slate-900'}`}>
       
       <header className="w-full max-w-6xl mb-10 relative flex flex-col items-center text-center px-12">
+        <div className="absolute left-0 top-0 h-full flex items-start pt-1 md:pt-2">
+          <img 
+            src="https://raw.githubusercontent.com/vegietarian18/sterilizing-pear-2/main/logo.png" 
+            alt="Logo" 
+            className="w-12 h-12 md:w-16 md:h-16 object-contain"
+          />
+        </div>
+
         <div className="flex flex-col items-center">
           <h1 className={`text-4xl md:text-5xl font-bold tracking-tight mb-1 font-sans transition-colors ${isDark ? 'text-emerald-500' : 'text-emerald-600'}`}>
             Sterilizing Pear 2
