@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import DiceInput from './components/DiceInput.tsx';
 import { calculateHeroscapeProbabilities } from './services/calculator.ts';
 import { CalculationResult, TacticalModifiers } from './types.ts';
@@ -61,8 +61,8 @@ const App: React.FC = () => {
   return (
     <div className={`min-h-screen p-4 md:p-8 flex flex-col items-center transition-colors duration-300 ${isDark ? 'bg-slate-950 text-slate-100' : 'bg-slate-50 text-slate-900'}`}>
       
-      <header className="w-full max-w-2xl mb-12 relative flex flex-col items-center">
-        <div className="flex flex-col items-center text-center px-8">
+      <header className="w-full max-w-6xl mb-10 relative flex flex-col items-center text-center px-12">
+        <div className="flex flex-col items-center">
           <h1 className={`text-4xl md:text-5xl font-bold tracking-tight mb-1 font-sans transition-colors ${isDark ? 'text-emerald-500' : 'text-emerald-600'}`}>
             Sterilizing Pear 2
           </h1>
@@ -71,7 +71,7 @@ const App: React.FC = () => {
           </p>
         </div>
 
-        <div className="absolute right-0 top-1">
+        <div className="absolute right-0 top-0 h-full flex items-start pt-1 md:pt-2">
           <button 
             onClick={() => setTheme(isDark ? 'light' : 'dark')}
             className={`p-2 rounded-full transition-all duration-200 border ${
