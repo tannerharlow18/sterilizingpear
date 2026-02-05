@@ -1,7 +1,7 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import DiceInput from './components/DiceInput.tsx';
-import { calculateHeroscapeProbabilities } from './services/calculator.ts';
-import { CalculationResult, TacticalModifiers } from './types.ts';
+import DiceInput from './components/DiceInput';
+import { calculateHeroscapeProbabilities } from './services/calculator';
+import { CalculationResult, TacticalModifiers } from './types';
 
 const INITIAL_MODIFIERS: TacticalModifiers = {
   deadlyStrike: false,

@@ -1,4 +1,4 @@
-import { CalculationResult, DamageOutcome, TacticalModifiers } from '../types.ts';
+import { CalculationResult, DamageOutcome, TacticalModifiers } from '../types';
 
 /**
  * Computes binomial coefficient (n choose k)
