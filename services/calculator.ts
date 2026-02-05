@@ -109,6 +109,8 @@ export const calculateHeroscapeProbabilities = (
       dice: 1, 
       isDebuff: true 
     };
+
+    // Fix: Corrected typo 'netTripTripSuccessProb' to 'netTripSuccessProb'
     const scenarioBothFail = { 
       prob: (1 - stareSuccessProb) * (1 - netTripSuccessProb),
       dice: normalDefenseDice, 

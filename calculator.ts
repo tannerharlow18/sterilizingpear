@@ -1,4 +1,4 @@
-import { CalculationResult, DamageOutcome, TacticalModifiers } from '../types.ts';
+import { CalculationResult, DamageOutcome, TacticalModifiers } from './types';
 
 /**
  * Computes binomial coefficient (n choose k)
@@ -109,6 +109,8 @@ export const calculateHeroscapeProbabilities = (
       dice: 1, 
       isDebuff: true 
     };
+
+    // Fix: Corrected typo 'netTripTripSuccessProb' to 'netTripSuccessProb' and simplified logic
     const scenarioBothFail = { 
       prob: (1 - stareSuccessProb) * (1 - netTripSuccessProb),
       dice: normalDefenseDice, 
@@ -175,7 +177,6 @@ export const calculateHeroscapeProbabilities = (
         
         if (headbuttTriggers) {
           headbuttChance += prob;
-          // Per user request: DO NOT add headbutt damage to traditional Wound Distribution table
           baseDamage = 0; 
         }
         
@@ -200,14 +201,11 @@ export const calculateHeroscapeProbabilities = (
           for (const ds of damageScenarios) {
             const finalBranchProb = prob * ds.p;
             
-            // Branch where wounds are IGNORED
             damageDistribution.set(0, (damageDistribution.get(0) || 0) + (finalBranchProb * d20PassChance));
             
-            // Branch where wounds are NOT ignored
             const woundInflictedProb = finalBranchProb * d20FailChance;
 
             if (modifiers.venomRay && ds.val > 0) {
-              // Venom Ray recursion
               let currentP = woundInflictedProb;
               let currentWounds = ds.val;
               for (let i = 0; i < 64; i++) {
@@ -236,8 +234,6 @@ export const calculateHeroscapeProbabilities = (
 
         // Damage to Attacker
         if (headbuttTriggers) {
-          // Per user request: Headbutt wounds are only communicated via the special summary box,
-          // not the traditional counter-strike distribution or hit chance tables.
           counterDistribution.set(0, (counterDistribution.get(0) || 0) + prob);
         } else if (modifiers.counterStrike && shields > skulls) {
           const counterDamage = shields - skulls;

@@ -49,7 +49,6 @@ const DiceInput: React.FC<DiceInputProps> = ({ label, value, onChange, max, colo
       </label>
       
       <div className="flex items-center gap-1.5">
-        {/* Dropdown Select - Made Larger */}
         <div className="relative flex-1 min-w-0">
           <select
             value={value}
@@ -70,7 +69,6 @@ const DiceInput: React.FC<DiceInputProps> = ({ label, value, onChange, max, colo
           </div>
         </div>
 
-        {/* Quick Adjustment Controls - Made Smaller and placed on the Right */}
         <div className="flex gap-1 shrink-0">
           <button
             onClick={handleIncrement}

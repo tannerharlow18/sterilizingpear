@@ -1,6 +1,6 @@
-import React, { useState, useMemo, useEffect } from 'react';
-import DiceInput from './components/DiceInput';
-import { calculateHeroscapeProbabilities } from './services/calculator';
+import React, { useState, useMemo } from 'react';
+import DiceInput from './DiceInput';
+import { calculateHeroscapeProbabilities } from './calculator';
 import { CalculationResult, TacticalModifiers } from './types';
 
 const INITIAL_MODIFIERS: TacticalModifiers = {
