@@ -64,7 +64,7 @@ const App: React.FC = () => {
       <header className="w-full max-w-6xl mb-10 relative flex flex-col items-center text-center px-12">
         <div className="absolute left-0 top-0 h-full flex items-start pt-1 md:pt-2">
           <img 
-            src="https://raw.githubusercontent.com/vegietarian18/sterilizing-pear-2/main/logo.png" 
+            src="https://raw.githubusercontent.com/tannerharlow18/sterilizingpear/main/logo.png" 
             alt="Logo" 
             className="w-12 h-12 md:w-16 md:h-16 object-contain"
           />
